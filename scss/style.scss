@@ -1,0 +1,65 @@
+.wrapper {
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: white;
+    text-align: center;
+
+    .header {
+        width: 500px;
+        border: 1px solid rgb(103, 46, 156);
+        background-color: rgb(103, 46, 156);
+        color: white;
+        border-radius: 50px;
+    }
+
+    .container {
+        width: 500px;
+
+        .register {
+            margin-top: 20px;
+            width: 500px;
+            height: 50px;
+            background-color: white;
+            border-color: gray;    
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .list {
+            height: 60px;
+            background-color: rgb(103, 46, 156);
+            display: flex;
+            border: 1px solid rgb(234, 0, 255);
+            border-radius: 50px;
+            margin-top: 20px;   
+            padding-top: 20px;
+            color: white;
+    
+            .icon {
+                margin-left: 20px;
+                width: 20px;
+                height: 20px;
+                background-image: url("./icon/date.svg") no-repeat;
+            }
+
+            .subject {
+                padding-left: 20px;
+
+            }
+
+            .d_day {
+                padding-left: 20px;
+
+            }
+
+            .date {
+                padding-left: 160px;
+
+            }
+        }
+    }
+    
+}

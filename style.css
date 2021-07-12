@@ -1,0 +1,55 @@
+.wrapper {
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: white;
+  text-align: center;
+}
+.wrapper .header {
+  width: 500px;
+  border: 1px solid #672e9c;
+  background-color: #672e9c;
+  color: white;
+  border-radius: 50px;
+}
+.wrapper .container {
+  width: 500px;
+}
+.wrapper .container .register {
+  margin-top: 20px;
+  width: 500px;
+  height: 50px;
+  background-color: white;
+  border-color: gray;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.wrapper .container .list {
+  height: 60px;
+  background-color: #672e9c;
+  display: flex;
+  border: 1px solid #ea00ff;
+  border-radius: 50px;
+  margin-top: 20px;
+  padding-top: 20px;
+  color: white;
+}
+.wrapper .container .list .icon {
+  margin-left: 20px;
+  width: 20px;
+  height: 20px;
+  background-image: url("./icon/date.svg") no-repeat;
+}
+.wrapper .container .list .subject {
+  padding-left: 20px;
+}
+.wrapper .container .list .d_day {
+  padding-left: 20px;
+}
+.wrapper .container .list .date {
+  padding-left: 160px;
+}
+
+/*# sourceMappingURL=style.css.map */
