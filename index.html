@@ -15,20 +15,32 @@
             <p class="name">The D-Day</p>
         </div>
         <div class="container">
-            <button class="register" onClick=""> + 디데이 등록하기</button>
-            <div id="list" class="list">
-                <div class="icon"><img src="./icon/date.svg" /></div>
-                <div class="subject">제목</div>
-                <div class="d_day">기준날짜</div>
-                <div class="date">오른쪽날짜</div>
+            <button class="register"> + 디데이 등록하기</button>
+            <div id="jjinlist" class="jjinlist">
+                <ul>
+                    <li id="subject_id"></li>
+                    <li id="d_day_id"></li>
+                    <li id="date_id"></li>
+                </ul>
             </div>
         </div>
     </div>
 
     <!-- modal  sass --watch scss/style.scss style.css
 -->
-    <div class="register-form">
-
+    <div class="register-form" id="register-form">
+        <form method="post">
+            <li class="first">제목</li>
+            <input type="text" name="subject" id="subject" placeholder="디데이 제목을 입력해주세요." />
+            <li>계산방법</li>
+            <div id="d_day_rate">
+                <input type="radio" name="d_day" value="start" id="start">날짜수
+                <input type="radio" name="d_day" value="until" id="until">디데이
+            </div>
+            <li>기준날짜</li>
+            <input type='date' name='date' id="date" />
+            <ul><button class="submit">저장</button></ul>
+        </form>
     </div>
 </body>
 <script src="script.js"></script>
