@@ -16,11 +16,11 @@
         </div>
         <div class="container">
             <button class="register"> + 디데이 등록하기</button>
-            <div id="jjinlist" class="jjinlist">
+            <div id="list" class="list">
                 <ul>
-                    <li id="subject_id"></li>
-                    <li id="d_day_id"></li>
-                    <li id="date_id"></li>
+                    <li class="subject_class"></li>
+                    <li class="d_day_class"></li>
+                    <li class="date_class"></li>
                 </ul>
             </div>
         </div>
@@ -30,6 +30,7 @@
 -->
     <div class="register-form" id="register-form">
         <form method="post">
+            <span class="close" onclick="CloseModal();">x</span>
             <li class="first">제목</li>
             <input type="text" name="subject" id="subject" placeholder="디데이 제목을 입력해주세요." />
             <li>계산방법</li>

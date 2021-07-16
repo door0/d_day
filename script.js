@@ -14,8 +14,6 @@ let date = document.getElementById("date").value;
 function addDday() {
     document.getElementById("register-form").style.display = "block";
 
-
-
     let submitButton = document.querySelector(".submit");
     if (submitButton) {
         submitButton.addEventListener("click", ShowList);
@@ -24,47 +22,61 @@ function addDday() {
 
 // counting date
 function Count() {
-    if (document.getElementById('start').checked) {
-        start_value = document.getElementById('start').value;
-        console.log(start_value)
-    } else {
-        until_value = document.getElementById('until').value;
-        console.log(until_value)
+    if ( d_day == 'start') { // 날짜수 : D+34 
+        let setDate = new Date(date);
+        let now = new Date();
+        let st_distance =  now.getTime() - setDate.getTime();
+        let day = Math.floor(st_distance/(1000*60*60*24))+ 1;
+
+        d_day = `${day}일`;
+
+    } else { // 디데이 : D-34 
+        let setDate = new Date(date);
+        let now = new Date();
+        let ut_distance = setDate.getTime() - now.getTime();
+        let day = Math.floor(ut_distance/(1000*60*60*24)) + 1;
+
+        d_day = `D-${day}`;
     }
 }
 
 // show dday list 
 function ShowList(e) {
+    // 새로고침 멈춰!
     e.preventDefault();
     document.getElementById("register-form").style.display = "none";
+
+    let list = document.querySelector(".list");
+    let ul = document.querySelector("ul");
+    let cln = ul.cloneNode(true);
+    list.appendChild(cln);
+    
 
     subject = document.getElementById("subject").value;
     d_day = document.querySelector("input[name='d_day']:checked").value;
     date = document.getElementById("date").value;
+    
+    // form reset
+    document.getElementById("subject").value = null;
+    document.getElementById("start").checked = false;
+    document.getElementById("until").checked = false;
+    document.getElementById("date").value = null;
 
-    let list = [subject, d_day, date];
+    Count();
 
-    // let jjinlist = document.querySelector("#jjinlist");
-    // jjinlist.innerHTML = list;
+    // input add node
+    document.querySelector(".subject_class").innerHTML = subject;
+    document.querySelector(".d_day_class").innerHTML = d_day;
+    document.querySelector(".date_class").innerHTML = date;
+}
 
-
-    // for (let i = 0; i < list.length; i++) {
-    //     jjinlist += "<li>" + list[i] + "<span class='close' id=" + i + ">" + "\u00D7" + "</span></li>";
-    // }
-    // // for (let i = 0; i < list.length; i++) {
-    // //     li += "<li>" + list[i] + "<span class='close' id=" + i + ">" + "\u00D7" + "</span></li>";
-    // // }
-
-    // document.querySelector("#jjinlist").innerHTML = list;
-    let jjinlist = document.querySelector("ul");
-    let cln = jjinlist.cloneNode(true);
-    document.body.appendChild(cln);
-
-
+// close modal
+function CloseModal() {
+    document.querySelector(".register-form").style.display = "none";
 }
 
 // delete dday list 
-function deleteDday() {
+function DeleteDday() {
     let id = this.getAttribute("id");
     itemList.splice(id, 1);
     showList();
