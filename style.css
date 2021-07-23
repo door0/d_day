@@ -1,52 +1,55 @@
-.wrapper {
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+body .wrapper {
   display: inline;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin: 0;
   background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
-.wrapper .header {
-  width: 500px;
+body .wrapper .header {
   border: 1px solid #672e9c;
   background-color: #672e9c;
   color: white;
-  border-radius: 50px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
-.wrapper .container {
-  width: 500px;
-}
-.wrapper .container .register {
-  margin-top: 20px;
+body .wrapper .container .register {
   width: 500px;
   height: 50px;
   background-color: #b8b8b8;
-  border-radius: 50px;
   cursor: pointer;
   border: none;
   outline: none;
 }
-.wrapper .container .icon {
+body .wrapper .container .icon {
   margin-left: 20px;
   width: 20px;
   height: 20px;
   background: url("/icon/date.svg") no-repeat;
 }
-.wrapper .container .subject {
-  padding-left: 20px;
+body .wrapper .container .update {
+  cursor: pointer;
+  margin-left: 360px;
+  margin-right: 10px;
+  font-size: small;
 }
-.wrapper .container .d_day {
-  padding-left: 20px;
+body .wrapper .container .close {
+  cursor: pointer;
+  font-size: small;
 }
-.wrapper .container .date {
-  padding-left: 160px;
-}
-.wrapper .container li {
+body .wrapper .container li {
   list-style: none;
 }
-
-.register-form {
+body .register-form {
   display: none;
   position: fixed;
   z-index: 1;
@@ -58,7 +61,7 @@
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
 }
-.register-form form {
+body .register-form form {
   margin: auto;
   margin-top: 50px;
   width: 300px;
@@ -66,15 +69,15 @@
   border-radius: 40px;
   background-color: white;
 }
-.register-form form .close {
+body .register-form form .close {
   margin-left: 250px;
   cursor: pointer;
 }
-.register-form form li, .register-form form input {
+body .register-form form li, body .register-form form input {
   margin-top: 10px;
   margin-left: 50px;
 }
-.register-form form button {
+body .register-form form button {
   margin-top: 15px;
   margin-left: 50px;
   width: 100px;
@@ -84,6 +87,7 @@
   background-color: #672e9c;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

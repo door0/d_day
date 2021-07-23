@@ -26,7 +26,7 @@ function Count() {
         let setDate = new Date(date);
         let now = new Date();
         let st_distance =  now.getTime() - setDate.getTime();
-        let day = Math.floor(st_distance/(1000*60*60*24))+ 1;
+        let day = Math.floor(st_distance/(1000*60*60*24)) + 1;
 
         d_day = `${day}일`;
 
@@ -35,22 +35,32 @@ function Count() {
         let now = new Date();
         let ut_distance = setDate.getTime() - now.getTime();
         let day = Math.floor(ut_distance/(1000*60*60*24)) + 1;
+        
+        if(setDate < now) {
+            d_day = `디데이로부터 ${day*-1} 일이 지났습니다.`;
+        } else {
+            d_day = `D-${day}`;
+        }
 
-        d_day = `D-${day}`;
     }
 }
 
-// show dday list 
+// show d-day list 
 function ShowList(e) {
-    // 새로고침 멈춰!
     e.preventDefault();
     document.getElementById("register-form").style.display = "none";
 
     let list = document.querySelector(".list");
     let ul = document.querySelector("ul");
     let cln = ul.cloneNode(true);
-    list.appendChild(cln);
-    
+    list.insertBefore(cln, ul);
+
+    let close = document.querySelector(".close");
+    close.innerHTML = `삭제`;
+
+    if (close) {
+        close.addEventListener("click", DeleteDday);
+    }
 
     subject = document.getElementById("subject").value;
     d_day = document.querySelector("input[name='d_day']:checked").value;
@@ -77,7 +87,7 @@ function CloseModal() {
 
 // delete dday list 
 function DeleteDday() {
-    let id = this.getAttribute("id");
-    itemList.splice(id, 1);
-    showList();
+    let ul = document.querySelector("ul");
+    ul.remove();
 }
+
