@@ -2,7 +2,6 @@
 
 document.getElementById("register-form").style.display = "none";
 
-let ddayList = [];
 let registerButton = document.querySelector(".register");
 registerButton.addEventListener("click", addDday);
 
@@ -26,18 +25,22 @@ function Count() {
         let setDate = new Date(date);
         let now = new Date();
         let st_distance =  now.getTime() - setDate.getTime();
-        let day = Math.floor(st_distance/(1000*60*60*24)) + 1;
+        let day = Math.floor(st_distance/(1000*60*60*24));
 
-        d_day = `${day}일`;
+        if(setDate > now) {
+            d_day = `D${day}`;
+        } else {
+            d_day = `${day}일`;
+        }
 
     } else { // 디데이 : D-34 
         let setDate = new Date(date);
         let now = new Date();
         let ut_distance = setDate.getTime() - now.getTime();
-        let day = Math.floor(ut_distance/(1000*60*60*24)) + 1;
+        let day = Math.abs(Math.ceil(ut_distance/(1000*60*60*24)));
         
         if(setDate < now) {
-            d_day = `디데이로부터 ${day*-1} 일이 지났습니다.`;
+            d_day = `디데이로부터 ${day}일이 지났습니다.`;
         } else {
             d_day = `D-${day}`;
         }
@@ -51,9 +54,9 @@ function ShowList(e) {
     document.getElementById("register-form").style.display = "none";
 
     let list = document.querySelector(".list");
-    let ul = document.querySelector("ul");
-    let cln = ul.cloneNode(true);
-    list.insertBefore(cln, ul);
+    let li = document.querySelector("li");
+    let cln = li.cloneNode(true);
+    list.insertBefore(cln, li);
 
     let close = document.querySelector(".close");
     close.innerHTML = `삭제`;
@@ -87,7 +90,7 @@ function CloseModal() {
 
 // delete dday list 
 function DeleteDday() {
-    let ul = document.querySelector("ul");
-    ul.remove();
+    let li = document.querySelector("li");
+    li.remove();
 }
 
