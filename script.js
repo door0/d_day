@@ -94,3 +94,9 @@ function DeleteDday() {
     li.remove();
 }
 
+
+// update dday list
+
+// icon update
+
+// localstorage

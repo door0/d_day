@@ -39,7 +39,7 @@ body {
           margin-left: 20px;
           width: 20px;
           height: 20px;
-          background: url('/icon/date.svg') no-repeat;
+          background: url('./icon/date.svg') no-repeat;
         }
 
         .update {
@@ -54,8 +54,23 @@ body {
           font-size: small;
         }
         
+        ul {
+          padding: 0;
+        }
+
         li {
           list-style: none;
+          padding-left: 40px;
+          padding-bottom: 10px;
+          margin-bottom: 15px;
+          &:hover {
+            background-color: rgb(223, 204, 241);
+            
+          }
+
+          &:last-child {
+            background-color: white;
+          }
         }
       }
     }
