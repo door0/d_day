@@ -77,6 +77,9 @@ function ShowList(e) {
 
     Count();
 
+    // image
+    document.querySelector(".icon").src =  `./icon/date.png`;
+
     // input add node
     document.querySelector(".subject_class").innerHTML = subject;
     document.querySelector(".d_day_class").innerHTML = d_day;

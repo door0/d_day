@@ -35,19 +35,12 @@ body {
           outline: none;
         }
         
-        .icon {
-          margin-left: 20px;
-          width: 20px;
-          height: 20px;
-          background: url('./icon/date.svg') no-repeat;
-        }
-
-        .update {
-          cursor: pointer;
-          margin-left: 360px;
-          margin-right: 10px;
-          font-size: small;
-        }
+        // .update {
+        //   cursor: pointer;
+        //   margin-left: 360px;
+        //   margin-right: 10px;
+        //   font-size: small;
+        // }
         
         .close {
           cursor: pointer;
@@ -56,21 +49,40 @@ body {
         
         ul {
           padding: 0;
+          margin: 0;
         }
 
         li {
           list-style: none;
+          padding-top: 10px;
           padding-left: 40px;
           padding-bottom: 10px;
-          margin-bottom: 15px;
+          padding-right: 40px;
+
           &:hover {
             background-color: rgb(223, 204, 241);
-            
           }
 
           &:last-child {
             background-color: white;
           }
+
+          img {
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            margin-right: 20px;
+
+            &:last-of-type {
+              width: auto;
+            }
+          } 
+
+          span{
+            float: right;
+          }
+        
         }
       }
     }

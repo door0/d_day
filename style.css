@@ -30,36 +30,39 @@ body .wrapper .container .register {
   border: none;
   outline: none;
 }
-body .wrapper .container .icon {
-  margin-left: 20px;
-  width: 20px;
-  height: 20px;
-  background: url("./icon/date.svg") no-repeat;
-}
-body .wrapper .container .update {
-  cursor: pointer;
-  margin-left: 360px;
-  margin-right: 10px;
-  font-size: small;
-}
 body .wrapper .container .close {
   cursor: pointer;
   font-size: small;
 }
 body .wrapper .container ul {
   padding: 0;
+  margin: 0;
 }
 body .wrapper .container li {
   list-style: none;
+  padding-top: 10px;
   padding-left: 40px;
   padding-bottom: 10px;
-  margin-bottom: 15px;
+  padding-right: 40px;
 }
 body .wrapper .container li:hover {
   background-color: #dfccf1;
 }
 body .wrapper .container li:last-child {
   background-color: white;
+}
+body .wrapper .container li img {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+body .wrapper .container li img:last-of-type {
+  width: auto;
+}
+body .wrapper .container li span {
+  float: right;
 }
 body .register-form {
   display: none;
