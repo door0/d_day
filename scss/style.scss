@@ -42,7 +42,8 @@ body {
         //   font-size: small;
         // }
         
-        .close {
+        .update, .close {
+          margin-left: 10px;
           cursor: pointer;
           font-size: small;
         }

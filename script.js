@@ -21,28 +21,36 @@ function addDday() {
 
 // counting date
 function Count() {
-    if ( d_day == 'start') { // 날짜수 : D+34 
+    if ( d_day == 'start') { // 날짜수 : 34일 ex. 커플 기념일 (1일부터 시작)
         let setDate = new Date(date);
+        setDate.setHours(0,0,0,0);
         let now = new Date();
+        now.setHours(0,0,0,0);
         let st_distance =  now.getTime() - setDate.getTime();
         let day = Math.floor(st_distance/(1000*60*60*24));
 
         if(setDate > now) {
             d_day = `D${day}`;
-        } else {
+        } else if (setDate < now) {
             d_day = `${day}일`;
+        } else {
+            d_day = `D-DAY`;
         }
 
-    } else { // 디데이 : D-34 
+    } else { // 디데이 : D-34 ex. 수능 시험 등 (D+은 0일부터 시작)
         let setDate = new Date(date);
+        setDate.setHours(0,0,0,0);
         let now = new Date();
+        now.setHours(0,0,0,0);
         let ut_distance = setDate.getTime() - now.getTime();
         let day = Math.abs(Math.ceil(ut_distance/(1000*60*60*24)));
         
         if(setDate < now) {
-            d_day = `디데이로부터 ${day}일이 지났습니다.`;
-        } else {
+            d_day = `D+${day}`;
+        } else if(setDate > now) {
             d_day = `D-${day}`;
+        } else {
+            d_day = `D-DAY`;
         }
 
     }
@@ -58,11 +66,17 @@ function ShowList(e) {
     let cln = li.cloneNode(true);
     list.insertBefore(cln, li);
 
+    let update = document.querySelector(".update");
+    update.innerHTML = `수정`;
+
     let close = document.querySelector(".close");
     close.innerHTML = `삭제`;
 
     if (close) {
         close.addEventListener("click", DeleteDday);
+    }
+    if (update) {
+        update.addEventListener("click", UpdateDday);
     }
 
     subject = document.getElementById("subject").value;
@@ -97,9 +111,21 @@ function DeleteDday() {
     li.remove();
 }
 
-
 // update dday list
+function UpdateDday() {
+    document.querySelector(".register-form").style.display = "block";
 
-// icon update
+    //show value in form
+    document.querySelector(".subject_class").value = subject;
+    const d_day_value = d_day;
+    console.log(d_day_value)
+    document.querySelector(".date_class").value = date;
+
+    document.getElementById("subject").value = subject;
+    // document.querySelector("input[name='d_day']:checked").value = d_day;
+    document.getElementById("date").value = date;
+
+}
+
 
 // localstorage

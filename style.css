@@ -30,7 +30,8 @@ body .wrapper .container .register {
   border: none;
   outline: none;
 }
-body .wrapper .container .close {
+body .wrapper .container .update, body .wrapper .container .close {
+  margin-left: 10px;
   cursor: pointer;
   font-size: small;
 }
